@@ -23,6 +23,8 @@ This directory contains the smart contracts for the Crowdfunding DApp and the Ha
    WALLET_KEY=your_wallet_private_key
    SCROLLSCAN_API_KEY=your_scrollscan_api_key
    ```
+   - To get your Alchemy scroll rpc url you have to sign up on [Alchemy](https://auth.alchemy.com/#:~:text=Log%20in.%20Don't%20have%20an%20account?%20Signup.) and head to your dashboard [https://dashboard.alchemy.com/](https://dashboard.alchemy.com/) to get your alchemy scroll rpc url
+   - To get your ScrollScan Api key you also have to sign up on [scrollscan](https://scrollscan.com/register) and then head to your dashboard to get your api key [https://scrollscan.com/myapikey](https://scrollscan.com/myapikey)
 
 ## Smart Contract Structure
 
