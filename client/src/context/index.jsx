@@ -7,6 +7,9 @@ import CrowdfundingABI from '../abi/CrowdfundingABI.json';
 // Scroll-Sepolia testnet details
 const SCROLL_SEPOLIA_CHAIN_ID = 534351;
 const SCROLL_SEPOLIA_RPC_URL = 'https://sepolia-rpc.scroll.io/';
+const SCROLL_SEPOLIA_CHAIN_NAME = "Scroll Sepolia Testnet";
+const SCROLL_SEPOLIA_EXPLORER_URL = "https://sepolia.scrollscan.com";
+
 
 // Contract address on Scroll-Sepolia
 const CONTRACT_ADDRESS = '0x86C56e1a7fCe47701f228f65F47143e219c7d829';
@@ -24,15 +27,49 @@ export const CrowdfundingProvider = ({ children }) => {
       try {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const address = await signer.getAddress();
-        setAddress(address);
 
         const { chainId } = await provider.getNetwork();
         if (chainId !== SCROLL_SEPOLIA_CHAIN_ID) {
           alert('Please switch to the Scroll-Sepolia testnet');
-          return;
+          try {
+              // Try to switch to Scroll-Sepolia network
+              await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: `0x${parseInt(SCROLL_SEPOLIA_CHAIN_ID, 10).toString(16)}` }],
+              });
+            } catch (switchError) {
+              // If the Scroll-Sepolia network is not added, add it
+              if (switchError.code === 4902) {
+                try {
+                  await window.ethereum.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [
+                      {
+                        chainId: SCROLL_SEPOLIA_CHAIN_ID,
+                        chainName: SCROLL_SEPOLIA_CHAIN_NAME,
+                        rpcUrls: [SCROLL_SEPOLIA_RPC_URL],
+                        nativeCurrency: SCROLL_SEPOLIA_NATIVE_CURRENCY,
+                        blockExplorerUrls: [SCROLL_SEPOLIA_EXPLORER_URL],
+                      },
+                    ],
+                  });
+                } catch (addError) {
+                  console.error('Failed to add Scroll-Sepolia network', addError);
+                  alert('Failed to add Scroll-Sepolia network. Please try manually.');
+                  return;
+                }
+              } else {
+                console.error('Failed to switch to Scroll-Sepolia network', switchError);
+                alert('Failed to switch to Scroll-Sepolia network. Please try manually.');
+                return;
+              }
+            }
         }
+
+        const newProvider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = newProvider.getSigner();
+        const address = await signer.getAddress();
+        setAddress(address);
 
         const crowdfundingContract = new ethers.Contract(CONTRACT_ADDRESS, CrowdfundingABI, signer);
         setContract(crowdfundingContract);
