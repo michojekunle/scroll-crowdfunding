@@ -33,7 +33,7 @@ The project is divided into two main directories:
 ### Clone the Repository
 
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/michojekunle/scroll-crowdfunding.git
 cd crowdfunding-dapp
 ```
 
