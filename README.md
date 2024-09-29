@@ -34,7 +34,7 @@ The project is divided into two main directories:
 
 ```bash
 git clone https://github.com/michojekunle/scroll-crowdfunding.git
-cd crowdfunding-dapp
+cd scroll-crowdfunding
 ```
 
 ### Frontend Setup (client directory)
