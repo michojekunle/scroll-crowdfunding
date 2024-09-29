@@ -1,0 +1,77 @@
+# Crowdfunding DApp on Scroll Sepolia
+
+This project is a decentralized crowdfunding application built on the Scroll Sepolia testnet. It allows users to create and contribute to crowdfunding campaigns using cryptocurrency.
+
+## Technologies Used
+
+- Frontend: React.js with Vite
+- Smart Contracts: Solidity
+- Development Environment: Hardhat
+- Network: Scroll Sepolia
+- RPC Provider: Alchemy
+- Deployment: Hardhat Ignition
+
+## Project Structure
+
+The project is divided into two main directories:
+
+1. `client`: Contains the frontend React application
+2. `hardhat-contracts`: Contains the smart contract and related files
+
+## Setup and Installation
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- pnpm or npm 
+- Git
+
+### Clone the Repository
+
+```bash
+git clone https://your-repository-url.git
+cd crowdfunding-dapp
+```
+
+### Frontend Setup (client directory)
+
+For detailed instructions on setting up the frontend, please refer to the [Client README](./client/README.md).
+
+### Smart Contract Setup (hardhat-contracts directory)
+
+For detailed instructions on setting up and deploying the smart contracts, please refer to the [Hardhat Contracts README](./hardhat-contracts/README.md).
+
+## Environment Variables
+
+Create a `.env` file in the `hardhat-contracts` directory with the following variables:
+
+```
+ALCHEMY_SCROLL_RPC_URL=your_alchemy_scroll_rpc_url
+WALLET_KEY=your_wallet_private_key
+SCROLLSCAN_API_KEY=your_scrollscan_api_key
+```
+
+## Deploying Smart Contracts
+
+To deploy the smart contracts to Scroll Sepolia:
+
+```bash
+cd hardhat-contracts
+npx hardhat ignition deploy ignition/modules/Crowdfunding.ts --network scroll_sepolia
+```
+
+To verify the contract on ScrollScan:
+
+```bash
+npx hardhat verify YOUR_CONTRACT_ADDRESS --network scroll_sepolia
+```
+
+Replace `YOUR_CONTRACT_ADDRESS` with the address of your deployed contract.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
