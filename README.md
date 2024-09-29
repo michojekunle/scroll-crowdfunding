@@ -2,6 +2,10 @@
 
 This project is a decentralized crowdfunding application built on the Scroll Sepolia testnet. It allows users to create and contribute to crowdfunding campaigns using cryptocurrency.
 
+Deployed Smart contract on Scroll Sepolia Testnet: [https://sepolia.scrollscan.com/address/0x86C56e1a7fCe47701f228f65F47143e219c7d829#code](https://sepolia.scrollscan.com/address/0x86C56e1a7fCe47701f228f65F47143e219c7d829#code)
+
+Live Link to interact: [https://scroll-crowdfunding.vercel.app/](https://scroll-crowdfunding.vercel.app/)
+
 ## Technologies Used
 
 - Frontend: React.js with Vite
