@@ -45,7 +45,7 @@ export const CrowdfundingProvider = ({ children }) => {
                     method: 'wallet_addEthereumChain',
                     params: [
                       {
-                        chainId: SCROLL_SEPOLIA_CHAIN_ID,
+                        chainId: `0x${parseInt(SCROLL_SEPOLIA_CHAIN_ID, 10).toString(16)}`,
                         chainName: SCROLL_SEPOLIA_CHAIN_NAME,
                         rpcUrls: [SCROLL_SEPOLIA_RPC_URL],
                         nativeCurrency: SCROLL_SEPOLIA_NATIVE_CURRENCY,
