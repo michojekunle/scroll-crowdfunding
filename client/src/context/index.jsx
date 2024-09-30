@@ -9,6 +9,11 @@ const SCROLL_SEPOLIA_CHAIN_ID = 534351;
 const SCROLL_SEPOLIA_RPC_URL = 'https://sepolia-rpc.scroll.io/';
 const SCROLL_SEPOLIA_CHAIN_NAME = "Scroll Sepolia Testnet";
 const SCROLL_SEPOLIA_EXPLORER_URL = "https://sepolia.scrollscan.com";
+const SCROLL_SEPOLIA_NATIVE_CURRENCY = {
+  name: "Ether",
+  symbol: "ETH",
+  decimals: 18
+};
 
 
 // Contract address on Scroll-Sepolia
