@@ -12,7 +12,7 @@ Live Link to interact: [https://scroll-crowdfunding.vercel.app/](https://scroll-
 - Smart Contracts: Solidity
 - Development Environment: Hardhat
 - Network: Scroll Sepolia
-- RPC Provider: Alchemy
+- RPC Provider: Alchemy <strong>(Alchemy was used as an RPC provider in our hardhat.config.ts file as a provider to interact with the scroll sepolia testnet network)</strong>
 - Deployment: Hardhat Ignition
 
 ## Project Structure
