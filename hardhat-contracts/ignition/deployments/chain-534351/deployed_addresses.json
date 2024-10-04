@@ -1,3 +1,5 @@
 {
-  "CrowdfundingModule#Crowdfunding": "0x86C56e1a7fCe47701f228f65F47143e219c7d829"
+  "CrowdfundingModule#Crowdfunding": "0x86C56e1a7fCe47701f228f65F47143e219c7d829",
+  "OveraTokenModule#OveraToken": "0xfC3Db8fb77Df1d72d735C924Fa779817B03202d9",
+  "ProposalsModule#ProposalContract": "0xf6C6fF3E2B350f800b33f35d05458e34A5BC2B0d"
 }
